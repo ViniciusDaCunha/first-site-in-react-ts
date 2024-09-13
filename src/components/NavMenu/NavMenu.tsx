@@ -6,10 +6,11 @@ export default function NavMenu() {
         display: "flex",
         gap: 0,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
+        background: "grey",
       }}
     >
-      <div style={{}}>logo</div>
+      <div>logo</div>
       <div>
         <div>
           <a href="#">1</a>
