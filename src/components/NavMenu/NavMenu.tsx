@@ -1,30 +1,34 @@
+import ButtonCustom from "../ButtonCustom/ButtonCustom";
+import logo from "../../assets/Logo.svg";
+import "./NavMenu.css";
+
 export default function NavMenu() {
   return (
-    <div
-      className="NavMenu"
-      style={{
-        display: "flex",
-        gap: 0,
-        alignItems: "center",
-        justifyContent: "space-evenly",
-        background: "grey",
-      }}
-    >
-      <div>logo</div>
+    <div className="NavMenu">
       <div>
-        <div>
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
+        <a href="/">
+          <img className="logo" src={logo} />
+        </a>
+      </div>
+      <div className="container-menu">
+        <div className="nav-menu-buttons">
+          <a href="#">Home</a>
+          <a href="#">Service</a>
+          <a href="#">Feature</a>
+          <a href="#">Product</a>
+          <a href="#">Testimonial</a>
+          <a href="#">FAQ</a>
         </div>
       </div>
       <div>
-        <div>
-          <button>1</button>
-          <button>2</button>
+        <div className="continer-buttons">
+          <ButtonCustom title="Sign up" size="small" appearence="tertiary">
+            Login
+          </ButtonCustom>
+
+          <ButtonCustom title="Sign up" size="small" appearence="primary">
+            Sign up
+          </ButtonCustom>
         </div>
       </div>
     </div>

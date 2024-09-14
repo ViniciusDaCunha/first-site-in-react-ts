@@ -1,0 +1,39 @@
+.NavMenu {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--silver);
+  padding: 30px 0;
+  min-width: 1440px;
+}
+
+.NavMenu .logo {
+  width: 154px;
+  cursor: pointer;
+}
+
+.NavMenu .container-menu {
+  padding: 0 50px;
+}
+
+.NavMenu .nav-menu-buttons {
+  display: flex;
+  gap: 50px;
+}
+
+.NavMenu .nav-menu-buttons a {
+  font-size: 16px;
+  line-height: 24px;
+  color: #18191f;
+  text-decoration: none;
+}
+
+.NavMenu .nav-menu-buttons a:hover {
+  text-decoration: underline;
+}
+
+.NavMenu .continer-buttons {
+  display: flex;
+  gap: 14px;
+}

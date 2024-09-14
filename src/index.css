@@ -1,9 +1,20 @@
-body, html {
+/*
+  global variables
+*/
+@import url("https://fonts.cdnfonts.com/css/inter");
+
+body,
+html {
   margin: 0;
   padding: 0;
+  --silver: #f5f7fa;
+  --silverHover: #edf0f3;
+  --primaryColor: #4caf4f;
+  --primaryColorHover: #439745;
 }
 
 * {
   box-sizing: border-box;
   position: relative;
+  font-family: "Inter", sans-serif;
 }
