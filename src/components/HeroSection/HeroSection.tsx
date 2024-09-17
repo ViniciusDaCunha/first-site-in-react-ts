@@ -1,31 +1,33 @@
 import ButtonCustom from "../ButtonCustom/ButtonCustom";
-import HeadlineOne from "../Typography/HeadlineOne";
+import Headline from "../Typography/Headline";
+import "./HeroSection.css";
+import image from "../../assets/Illustration.png";
+import Body from "../Typography/Body";
 
 export default function HeroSection() {
   return (
-    <div
-      className="frame-1"
-      style={{
-        display: "flex",
-        gap: "144px",
-        padding: "96px 144px",
-        alignItems: "center",
-        background: "var(--silver)",
-      }}
-    >
-      <div>
-        <HeadlineOne></HeadlineOne>
-        <h1>from 8 years</h1>
-        <p>
-          Where to grow your business as a photographer: site or social media?
-        </p>
-        <div>
-          <ButtonCustom appearence="primary" size="medium" title="Register">
-            Register
-          </ButtonCustom>
+    <div className="HeroSection">
+      <div className="frame-1">
+        <div className="frame-text">
+          <Headline size="h1" color="grey">
+            Lessons and insights
+          </Headline>
+          <Headline size="h1" color="primary">
+            from 8 years
+          </Headline>
+          <Body size="body1" weight="regular" color="grey">
+            Where to grow your business as a photographer: site or social media?
+          </Body>
+          <div>
+            <ButtonCustom appearence="primary" size="medium" title="Register">
+              Register
+            </ButtonCustom>
+          </div>
         </div>
       </div>
-      <div>Imagem</div>
+      <div>
+        <img className="image" src={image} />
+      </div>
     </div>
   );
 }

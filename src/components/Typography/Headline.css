@@ -1,0 +1,41 @@
+.h1 {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 76px;
+}
+
+.h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+.h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.black {
+  color: #263238;
+}
+
+.grey {
+  color: #4D4D4D;
+
+}
+
+.primary {
+  color: var(--primaryColor);
+}
+
+.white {
+  color: #FFFFFF;
+
+}
