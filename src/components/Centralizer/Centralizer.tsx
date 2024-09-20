@@ -1,8 +1,8 @@
 import React from "react";
 import "./Centralizer.css";
 
-type CentralizerParam = { children: React.ReactNode };
+type CentralizerParams = { children: React.ReactNode };
 
-export default function Centralizer(params: CentralizerParam) {
+export default function Centralizer(params: CentralizerParams) {
   return <div className="Centralizer">{params.children}</div>;
 }
