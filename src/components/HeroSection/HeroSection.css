@@ -1,18 +1,20 @@
 .HeroSection {
-  width: 1440px;
+  background: var(--silver);
+}
+
+.HeroSection .flex-grid {
   padding: 96px 144px;
   gap: 104px;
   display: flex;
   justify-content: center;
-  background: var(--silver);
 }
 
-.HeroSection.frame-1 {
+.HeroSection .frame-1 {
   width: 657px;
   height: auto;
   gap: 32px;
 }
 
-.HeroSection.image {
+.HeroSection .image {
   width: 391px;
 }

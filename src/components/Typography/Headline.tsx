@@ -16,7 +16,7 @@ type GetClassParams = {
 };
 
 function getClassNames(params: GetClassParams) {
-  return "Headline-" + params.size + " " + params.color;
+  return "Headline " + params.size + " " + params.color;
 }
 
 function Headline(params: HeadlineParams) {
