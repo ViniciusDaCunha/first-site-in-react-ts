@@ -6,7 +6,7 @@
 }
 
 .ClientsSection .clients-text {
-  width: 1110px;
+  width: auto;
   height: auto;
   display: flex;
   flex-direction: column;

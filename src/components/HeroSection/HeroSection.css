@@ -18,3 +18,7 @@
 .HeroSection .image {
   width: 391px;
 }
+
+.HeroSection .button {
+  margin-top: 24px;
+}

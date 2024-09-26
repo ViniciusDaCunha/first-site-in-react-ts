@@ -22,7 +22,7 @@ export default function HeroSection() {
                 Where to grow your business as a photographer: site or social
                 media?
               </Body>
-              <div>
+              <div className="button">
                 <ButtonCustom
                   appearence="primary"
                   size="medium"
