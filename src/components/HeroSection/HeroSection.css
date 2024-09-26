@@ -19,6 +19,27 @@
   width: 391px;
 }
 
-.HeroSection .button {
+.HeroSection .frame-1 .button-area {
   margin-top: 24px;
+}
+
+.HeroSection .bullet-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 17px;
+  gap: 8px;
+}
+
+.HeroSection div.bullet-area span.slider-bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(76, 175, 79, 0.2);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.HeroSection div.bullet-area span.slider-bullet.selected {
+  background-color: rgba(76, 175, 79, 1);
 }
