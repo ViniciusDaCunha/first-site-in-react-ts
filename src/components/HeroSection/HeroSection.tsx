@@ -22,7 +22,7 @@ export default function HeroSection() {
                 Where to grow your business as a photographer: site or social
                 media?
               </Body>
-              <div>
+              <div className="button-area">
                 <ButtonCustom
                   appearence="primary"
                   size="medium"
@@ -33,9 +33,18 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+
           <div>
             <img className="image" src={image} />
           </div>
+        </div>
+        <div className="bullet-area">
+          {[0, 1, 2].map((item) => {
+            if (item === 0)
+              return <span className="slider-bullet selected"></span>;
+
+            return <span className="slider-bullet"></span>;
+          })}
         </div>
       </Centralizer>
     </div>
