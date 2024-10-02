@@ -19,7 +19,7 @@ function Achievements() {
               We reached here with our hard work and dedication
             </Body>
           </div>
-          <div className="right-side"></div>
+          <div className="right-side">{/* TODO: 4 items here */}</div>
         </div>
       </Centralizer>
     </div>
