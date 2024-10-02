@@ -1,0 +1,31 @@
+.PixelGradeFooter {
+  position: relative;
+  padding: 52px 0;
+  margin-top: 40px;
+}
+
+.PixelGradeFooter .left-side {
+  flex: 0 0 440px;
+  text-align: center;
+}
+
+.PixelGradeFooter .left-side img {
+  width: 260px;
+}
+
+.PixelGradeFooter .right-side {
+  padding-right: 60px;
+}
+
+.PixelGradeFooter .grid-container {
+  display: flex;
+  gap: 49px;
+  align-items: center;
+}
+
+.PixelGradeFooter .detail-text {
+  padding: 16px 0 32px;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 14px;
+}
