@@ -1,0 +1,19 @@
+.Achievements {
+  position: relative;
+  background-color: var(--silver);
+  margin-top: 40px;
+  padding: 64px 0;
+}
+
+.Achievements .grid-flex {
+  display: flex;
+  gap: 72px;
+}
+
+.Achievements .grid-flex .left-side {
+  flex: 0 0 540px;
+  padding-right: 132px;
+}
+.Achievements .grid-flex .right-side {
+  flex: 1;
+}

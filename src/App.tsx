@@ -1,4 +1,5 @@
 import "./App.css";
+import Achievements from "./components/Achievements/Achievements";
 import ClientsSection from "./components/ClientsSection/ClientsSection";
 import CommunitySection from "./components/CommunitySection/CommunitySection";
 import HeroSection from "./components/HeroSection/HeroSection";
@@ -14,6 +15,7 @@ function App() {
       <ClientsSection />
       <CommunitySection />
       <PixelGrade />
+      <Achievements />
       <PixelFooter />
     </>
   );
