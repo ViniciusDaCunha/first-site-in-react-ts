@@ -3,7 +3,7 @@
 }
 
 .HeroSection .flex-grid {
-  padding: 96px 144px;
+  padding: 96px 0;
   gap: 104px;
   display: flex;
   justify-content: center;
