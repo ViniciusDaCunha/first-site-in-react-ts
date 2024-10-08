@@ -2,6 +2,7 @@ import Centralizer from "../Centralizer/Centralizer";
 import "./PixelGradeFooter.css";
 import Headline from "../Typography/Headline";
 import ButtonCustom from "../ButtonCustom/ButtonCustom";
+import Body from "../Typography/Body";
 
 type PixelGradeFooterParams = {
   title: string;
@@ -29,7 +30,9 @@ function PixelGradeFooter({
             <Headline size="h2" color="grey">
               {title}
             </Headline>
-            <div className="detail-text">{description}</div>
+            <Body size="body2" weight="regular" color="grey">
+              {description}
+            </Body>
             <ButtonCustom title="Learn More" size="normal" appearence="primary">
               Learn More
             </ButtonCustom>

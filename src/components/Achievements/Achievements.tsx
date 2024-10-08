@@ -2,6 +2,10 @@ import Centralizer from "../Centralizer/Centralizer";
 import Body from "../Typography/Body";
 import Headline from "../Typography/Headline";
 import "./Achievements.css";
+import AchievementsBoxFour from "./AchievementsBoxFour";
+import AchievementsBoxOne from "./AchievementsBoxOne";
+import AchievementsBoxThree from "./AchievementsBoxThree";
+import AchievementsBoxTwo from "./AchievementsBoxTwo";
 
 function Achievements() {
   return (
@@ -19,7 +23,16 @@ function Achievements() {
               We reached here with our hard work and dedication
             </Body>
           </div>
-          <div className="right-side">{/* TODO: 4 items here */}</div>
+          <div className="right-side">
+            <div className="row-flex">
+              <AchievementsBoxOne></AchievementsBoxOne>
+              <AchievementsBoxTwo></AchievementsBoxTwo>
+            </div>
+            <div className="row-flex">
+              <AchievementsBoxThree></AchievementsBoxThree>
+              <AchievementsBoxFour></AchievementsBoxFour>
+            </div>
+          </div>
         </div>
       </Centralizer>
     </div>

@@ -14,6 +14,15 @@
   flex: 0 0 540px;
   padding-right: 132px;
 }
+
 .Achievements .grid-flex .right-side {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Achievements .row-flex {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Body.css";
 
-type SizeBody = "body1" | "body2" | "body3" | "body4";
+type SizeBody = "body1" | "body2" | "body2-0" | "body3" | "body4";
 type WeightBody = "medium" | "regular";
 type ColorBody = "grey" | "black" | "white";
 

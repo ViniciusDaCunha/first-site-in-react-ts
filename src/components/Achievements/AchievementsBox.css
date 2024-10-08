@@ -1,0 +1,6 @@
+.AchievementsBox .row-item {
+  width: 255px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
