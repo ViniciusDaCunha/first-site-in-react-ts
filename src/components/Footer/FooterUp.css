@@ -1,0 +1,15 @@
+.FooterUp {
+  position: relative;
+  background-color: var(--silver);
+  margin-top: 80px;
+  padding: 32px 0;
+}
+
+.FooterUp .footer-up {
+  text-align: center;
+  padding: 0px 128px;
+}
+
+.FooterUp .footer-title {
+  margin-bottom: 25px;
+}
