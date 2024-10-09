@@ -4,8 +4,58 @@ import "./HeroSection.css";
 import image from "../../assets/Illustration.png";
 import Body from "../Typography/Body";
 import Centralizer from "../Centralizer/Centralizer";
+import { useEffect, useState } from "react";
+
+type BannerLessonsType = {
+  mainTitle: string;
+  description: string;
+  buttonLabel: string;
+  buttonUrl: string;
+};
+
+async function getHeroDataFromServer() {
+  const result = await fetch("http://localhost:5899/banner-lessons", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+
+  const finalData = (await result.json()) as BannerLessonsType;
+
+  return finalData;
+}
 
 export default function HeroSection() {
+  const [bannerData, setBannerData] = useState<BannerLessonsType>({
+    mainTitle: "",
+    buttonLabel: "",
+    buttonUrl: "",
+    description: "",
+  });
+
+  const [greyText, setGreyText] = useState<string>("");
+
+  const [greenText, setGreenText] = useState<string>("");
+
+  async function loadLocalVariables() {
+    const localData = await getHeroDataFromServer();
+
+    const tempGreyText = localData.mainTitle.replace("from 8 years", "");
+    const tempGreenText = localData.mainTitle.replace(
+      "Lessons and insights",
+      ""
+    );
+
+    setGreyText(tempGreyText);
+    setGreenText(tempGreenText);
+    setBannerData(localData);
+  }
+
+  useEffect(() => {
+    loadLocalVariables();
+  }, []);
+
   return (
     <div className="HeroSection">
       <Centralizer>
@@ -13,14 +63,13 @@ export default function HeroSection() {
           <div className="frame-1">
             <div className="frame-text">
               <Headline size="h1" color="grey">
-                Lessons and insights
+                {greyText}
               </Headline>
               <Headline size="h1" color="primary">
-                from 8 years
+                {greenText}
               </Headline>
               <Body size="body1" weight="regular" color="grey">
-                Where to grow your business as a photographer: site or social
-                media?
+                {bannerData.description}
               </Body>
               <div className="button-area">
                 <ButtonCustom
@@ -28,7 +77,7 @@ export default function HeroSection() {
                   size="medium"
                   title="Register"
                 >
-                  Register
+                  {bannerData.buttonLabel}
                 </ButtonCustom>
               </div>
             </div>
