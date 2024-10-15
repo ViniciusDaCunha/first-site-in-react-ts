@@ -8,6 +8,7 @@
 
 .FooterDown .flex-grid {
   display: flex;
+  justify-content: space-between;
 }
 
 .FooterDown .company-info {
@@ -23,4 +24,28 @@
 .FooterDown .company-midia {
   display: flex;
   gap: 16px;
+}
+
+.FooterDown .social-links {
+  display: flex;
+  gap: 24px
+}
+
+.FooterDown .about-company {
+  width: 160px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.FooterDown .about-company a:hover {
+  text-decoration: underline;
+}
+
+.FooterDown .email-set {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }

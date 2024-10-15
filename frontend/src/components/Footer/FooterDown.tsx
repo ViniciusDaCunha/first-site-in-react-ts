@@ -6,6 +6,8 @@ import logoInsta from "../../assets/instagram.png";
 import logoTwitter from "../../assets/twitter.png";
 import logoYoutube from "../../assets/youtube.png";
 import Body from "../Typography/Body";
+import Headline from "../Typography/Headline";
+import FooterSetEmail from "./FooterSetEmail";
 
 export default function FooterDown() {
   return (
@@ -41,7 +43,74 @@ export default function FooterDown() {
               </a>
             </div>
           </div>
-          <div className="social-links"></div>
+          <div className="social-links">
+            <div className="about-company">
+              <Headline size="h4" color="white">
+                Company
+              </Headline>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  About us
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Blog
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Contact us
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Pricing
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Testimonials
+                </Body>
+              </a>
+            </div>
+            <div className="about-company">
+              <Headline size="h4" color="white">
+                Support
+              </Headline>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Help Center
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Terms of service
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Legal
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Privacy policy
+                </Body>
+              </a>
+              <a href="/">
+                <Body size="body3-0" weight="regular" color="white">
+                  Status
+                </Body>
+              </a>
+            </div>
+            <div className="email-set">
+              <Headline size="h4" color="white">
+                Stay up to date
+              </Headline>
+              <FooterSetEmail></FooterSetEmail>
+            </div>
+          </div>
         </div>
       </Centralizer>
     </div>
