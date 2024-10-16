@@ -9,7 +9,7 @@ type UpdateSectionBoxParams = {
 
 function UpdateSectionBox({ title = "", image = "" }: UpdateSectionBoxParams) {
   return (
-    <div className="update-box">
+    <div className="UpdateSectionBox update-box">
       <div className="box-img">
         <img src={image} alt="Updata box image" title="Update box image" />
       </div>
