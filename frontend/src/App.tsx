@@ -8,6 +8,7 @@ import NavMenu from "./components/NavMenu/NavMenu";
 import PixelFooter from "./components/PixelGrade/PixelFooter";
 import PixelGrade from "./components/PixelGrade/PixelGrade";
 import FooterDown from "./components/Footer/FooterDown";
+import UpdateSection from "./components/UpdateSection/UpdateSection";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <PixelGrade />
       <Achievements />
       <PixelFooter />
+      <UpdateSection />
       <FooterUp />
       <FooterDown />
     </>
