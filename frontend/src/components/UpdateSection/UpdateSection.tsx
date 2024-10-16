@@ -2,11 +2,37 @@ import Centralizer from "../Centralizer/Centralizer";
 import Body from "../Typography/Body";
 import Headline from "../Typography/Headline";
 import "./UpdateSection.css";
-import UpdateSectionBoxOne from "./UpdateSectionBoxOne";
-import UpdateSectionBoxThree from "./UpdateSectionBoxThree";
-import UpdateSectionBoxTwo from "./UpdateSectionBoxTwo";
+import UpdateSectionBox, { UpdateSectionBoxParams } from "./UpdateSectionBox";
+import { useEffect, useState } from "react";
+
+async function getServerData(): Promise<UpdateSectionBoxParams[]> {
+  const result = await fetch("http://localhost:5899/update-section", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+
+  const finalData = (await result.json()) as UpdateSectionBoxParams[];
+
+  return finalData;
+}
 
 function UpdateSection() {
+  const [localSectionItems, setLocalSectionItems] = useState<
+    UpdateSectionBoxParams[]
+  >([]);
+
+  async function loadLocalSectionItems() {
+    const temp = await getServerData();
+
+    setLocalSectionItems(temp);
+  }
+
+  useEffect(() => {
+    loadLocalSectionItems();
+  }, []);
+
   return (
     <div className="UpdateSection">
       <Centralizer>
@@ -23,9 +49,9 @@ function UpdateSection() {
             </Body>
           </div>
           <div className="community-update">
-            <UpdateSectionBoxOne></UpdateSectionBoxOne>
-            <UpdateSectionBoxTwo></UpdateSectionBoxTwo>
-            <UpdateSectionBoxThree></UpdateSectionBoxThree>
+            {localSectionItems.map((item) => {
+              return <UpdateSectionBox title={item.title} image={item.image} />;
+            })}
           </div>
         </div>
       </Centralizer>

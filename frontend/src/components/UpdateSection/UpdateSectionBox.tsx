@@ -2,7 +2,7 @@ import ButtonCustom from "../ButtonCustom/ButtonCustom";
 import Headline from "../Typography/Headline";
 import "./UpdateSectionBox.css";
 
-type UpdateSectionBoxParams = {
+export type UpdateSectionBoxParams = {
   title: string;
   image: string;
 };
