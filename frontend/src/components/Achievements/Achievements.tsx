@@ -2,12 +2,38 @@ import Centralizer from "../Centralizer/Centralizer";
 import Body from "../Typography/Body";
 import Headline from "../Typography/Headline";
 import "./Achievements.css";
-import AchievementsBoxFour from "./AchievementsBoxFour";
-import AchievementsBoxOne from "./AchievementsBoxOne";
-import AchievementsBoxThree from "./AchievementsBoxThree";
-import AchievementsBoxTwo from "./AchievementsBoxTwo";
+
+import AchievementsBox, { AchievementsBoxParams } from "./AchievementsBox";
+import { useEffect, useState } from "react";
+
+async function getServerData(): Promise<AchievementsBoxParams[]> {
+  const result = await fetch("http://localhost:5899/achievements-box", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+
+  const finalData = (await result.json()) as AchievementsBoxParams[];
+
+  return finalData;
+}
 
 function Achievements() {
+  const [localAchievementsItems, setLocalAchievements] = useState<
+    AchievementsBoxParams[]
+  >([]);
+
+  async function loadAchievementsItems() {
+    const temp = await getServerData();
+
+    setLocalAchievements(temp);
+  }
+
+  useEffect(() => {
+    loadAchievementsItems();
+  }, []);
+
   return (
     <div className="Achievements">
       <Centralizer>
@@ -24,14 +50,15 @@ function Achievements() {
             </Body>
           </div>
           <div className="right-side">
-            <div className="row-flex">
-              <AchievementsBoxOne></AchievementsBoxOne>
-              <AchievementsBoxTwo></AchievementsBoxTwo>
-            </div>
-            <div className="row-flex">
-              <AchievementsBoxThree></AchievementsBoxThree>
-              <AchievementsBoxFour></AchievementsBoxFour>
-            </div>
+            {localAchievementsItems.map((item) => {
+              return (
+                <AchievementsBox
+                  image={item.image}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+            })}
           </div>
         </div>
       </Centralizer>
