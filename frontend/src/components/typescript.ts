@@ -58,3 +58,13 @@ const user = {
 };
 
 console.log(user.age);
+/*
+
+{
+  [0, 1, 2].map((item) => {
+    if (item === 0) return <span className="slider-bullet selected"></span>;
+
+    return <span className="slider-bullet"></span>;
+  });
+}
+ */

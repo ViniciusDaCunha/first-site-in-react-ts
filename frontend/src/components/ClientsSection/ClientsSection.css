@@ -15,4 +15,14 @@
 
 .ClientsSection .clients-logo {
   width: 1152px;
+  display: flex;
+  justify-content: space-around;
+  padding: 36px 0px;
+
+}
+
+.ClientsSection .logo {
+  width: 48px;
+  height: 48px;
+  align-content: center;
 }

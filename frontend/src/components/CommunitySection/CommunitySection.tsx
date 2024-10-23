@@ -1,12 +1,39 @@
+import { useEffect, useState } from "react";
 import Centralizer from "../Centralizer/Centralizer";
 import Body from "../Typography/Body";
 import Headline from "../Typography/Headline";
 import "./CommunitySection.css";
-import icon1 from "../../assets/membership.png";
-import icon2 from "../../assets/nationalassociations.png";
-import icon3 from "../../assets/clubs.png";
+import CommunitySectionBox, {
+  CommunitySectionBoxParams,
+} from "./CommunitySectionBox";
+
+async function getServerData(): Promise<CommunitySectionBoxParams[]> {
+  const result = await fetch("http://localhost:5899/community-box", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+
+  const finalData = (await result.json()) as CommunitySectionBoxParams[];
+  return finalData;
+}
 
 export default function CommunitySection() {
+  const [boxSectionItems, setBoxSectionsItems] = useState<
+    CommunitySectionBoxParams[]
+  >([]);
+
+  async function loadBoxSectionsItems() {
+    const temp = await getServerData();
+
+    setBoxSectionsItems(temp);
+  }
+
+  useEffect(() => {
+    loadBoxSectionsItems();
+  }, []);
+
   return (
     <div className="CommunitySection">
       <Centralizer>
@@ -23,42 +50,15 @@ export default function CommunitySection() {
             </Body>
           </div>
           <div className="community-network">
-            <div className="network-grid">
-              <div className="icon-grid">
-                <img src={icon1} />
-              </div>
-              <Headline size="h3" color="grey">
-                Membership Organisations
-              </Headline>
-              <Body size="body3" color="grey" weight="regular">
-                Our membership management software provides full automation of
-                membership renewals and payments
-              </Body>
-            </div>
-            <div className="network-grid">
-              <div className="icon-grid">
-                <img src={icon2} />
-              </div>
-              <Headline size="h3" color="grey">
-                National Associations
-              </Headline>
-              <Body size="body3" color="grey" weight="regular">
-                Our membership management software provides full automation of
-                membership renewals and payments
-              </Body>
-            </div>
-            <div className="network-grid">
-              <div className="icon-grid">
-                <img src={icon3} />
-              </div>
-              <Headline size="h3" color="grey">
-                Clubs And Groups
-              </Headline>
-              <Body size="body3" color="grey" weight="regular">
-                Our membership management software provides full automation of
-                membership renewals and payments
-              </Body>
-            </div>
+            {boxSectionItems.map((item) => {
+              return (
+                <CommunitySectionBox
+                  image={item.image}
+                  title={item.title}
+                  description={item.description}
+                />
+              );
+            })}
           </div>
         </div>
       </Centralizer>

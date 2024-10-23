@@ -2,7 +2,7 @@ import Body from "../Typography/Body";
 import Headline from "../Typography/Headline";
 import "./AchievementsBox.css";
 
-type AchievementsBoxParams = {
+export type AchievementsBoxParams = {
   title: string;
   description: string;
   image: string;
