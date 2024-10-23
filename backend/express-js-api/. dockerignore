@@ -1,0 +1,2 @@
+./backend/express-js-api/**/node_modules
+./backend/express-js-api/package-lock.json

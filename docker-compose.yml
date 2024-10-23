@@ -1,4 +1,27 @@
 services:
+  api-1:
+    container_name: apiv_1
+    build:
+      context: .
+      dockerfile: ./backend/express-js-api/Dockerfile
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - 5899:5899
+    volumes:
+      - ./backend/express-js-api:/code
+      - /backend/express-js-api/node_modules
+
+  frontend-1:
+    container_name: frontend_1
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend:/code
+
   mysql8033:
     container_name: mysql8033_vini
     build:
