@@ -21,6 +21,7 @@ services:
       - 5173:5173
     volumes:
       - ./frontend:/code
+      - /frontend/node_modules
 
   mysql8033:
     container_name: mysql8033_vini

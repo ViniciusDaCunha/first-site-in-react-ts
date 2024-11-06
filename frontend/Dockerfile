@@ -1,15 +1,11 @@
-FROM node:23-alpine
+FROM node:23
 
-RUN apk add --no-cache libc6-compat
-
-RUN apk update 
+RUN apt-get update 
 
 RUN mkdir -p /code
 
 WORKDIR /code
 
 COPY ./frontend /code
-
-RUN npm install
 
 EXPOSE 5173

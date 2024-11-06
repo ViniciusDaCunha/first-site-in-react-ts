@@ -10,6 +10,4 @@ RUN rm -rf node_modules/
 
 RUN rm -f package-lock.json/
 
-RUN npm install
-
 EXPOSE 5899
