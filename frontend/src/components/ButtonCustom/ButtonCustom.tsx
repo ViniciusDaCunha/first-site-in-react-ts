@@ -16,22 +16,22 @@ type GetClassParams = {
   appearence: AppearenceButton;
 };
 
-function getClassNames(params: GetClassParams) {
+function getClassNames( { appearence, size } : GetClassParams) {
   return (
-    "ButtonCustom appeareance-" + params.appearence + " size-" + params.size
+    "ButtonCustom appeareance-" + appearence + " size-" + size
   );
 }
 
-function ButtonCustom(params: ButtonParams) {
+function ButtonCustom( { appearence = "primary", size = "normal", title = "", children } : ButtonParams) {
   return (
     <button
       className={getClassNames({
-        size: params.size,
-        appearence: params.appearence,
+        size: size,
+        appearence: appearence,
       })}
-      title={params.title}
+      title={title}
     >
-      {params.children}
+      {children}
     </button>
   );
 }

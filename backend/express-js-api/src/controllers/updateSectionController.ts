@@ -1,28 +1,16 @@
 import { Request, Response } from "express";
-import { mockUpdateSectionItems } from "../models/UpdateSectionModel";
-// import knex from "knex";
+import UpdateSectionBoxItem  from "../models/UpdateSectionModel";
+import connectDatabase from "../lib/database";
 
 async function updateSectionController(req: Request, res: Response) {
-  /*
 
-  const connection = knex({
-    client: "mysql2",
-    connection: {
-      host: "127.0.0.1",
-      port: 3306,
-      user: "mysql",
-      password: "root",
-      database: "site_vini_dev",
-    },
-  });
+  const connection = connectDatabase();
 
-  const rows = await connection<UpdateSectionBoxParams[]>(
+  const rows = await connection<UpdateSectionBoxItem[]>(
     "update_section_items"
   ).select("*");
-
-  */
-
-  res.status(200).send(mockUpdateSectionItems);
+  
+  res.status(200).send(rows);
 }
 
 export default updateSectionController;

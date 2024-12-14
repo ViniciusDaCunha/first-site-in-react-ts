@@ -1,12 +1,12 @@
-type achievementsBoxItem = {
+type AchievementsBoxItem = {
   image: string;
   title: string;
   description: string;
 };
 
-export default achievementsBoxItem;
+export default AchievementsBoxItem;
 
-const mockAchievemetsBoxItems: achievementsBoxItem[] = [
+const mockAchievemetsBoxItems: AchievementsBoxItem[] = [
   {
     image: "/row1.png",
     title: "2,245,341",

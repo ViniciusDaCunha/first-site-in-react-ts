@@ -1,8 +1,16 @@
 import { Request, Response } from "express";
-import { mockClientsLogoItems } from "../models/ClientsLogoModels";
+import ClientsLogoItems from "../models/ClientsLogoModels";
+import connectDatabase from "../lib/database";
 
 async function clientsLogoController(req: Request, res: Response) {
-  res.status(200).send(mockClientsLogoItems);
+
+  const connection = connectDatabase();
+
+  const rows = await connection<ClientsLogoItems[]>(
+    "clients_logo"
+  ).select("*");
+
+  res.status(200).send(rows);
 }
 
 export default clientsLogoController;
