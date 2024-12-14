@@ -8,7 +8,7 @@ async function achievementsBoxController(req: Request, res: Response) {
   const connection = connectDatabase()
 
   const rows = await connection<AchievementsBoxItem[]>(
-    "achievements_box"
+    "achievements_boxes"
   ).select("*");
 
   res.status(200).send(rows)
