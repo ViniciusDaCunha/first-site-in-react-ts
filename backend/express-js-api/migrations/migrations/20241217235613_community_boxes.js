@@ -3,9 +3,8 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('achievements_boxes', (table)=> {
-
-    table.increments()
+  return knex.schema.createTable('community_boxes', (table)=>{
+    table.increments();
     table.string('image');
     table.string('title');
     table.string('description');
@@ -20,5 +19,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('achievements_boxes');
+  return knex.schema.dropTable('community_boxes');
 };

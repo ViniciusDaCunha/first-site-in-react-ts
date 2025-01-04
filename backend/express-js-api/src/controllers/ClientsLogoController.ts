@@ -7,7 +7,7 @@ async function clientsLogoController(req: Request, res: Response) {
   const connection = connectDatabase();
 
   const rows = await connection<ClientsLogoItems[]>(
-    "clients_logo"
+    "logo_clients"
   ).select("*");
 
   res.status(200).send(rows);

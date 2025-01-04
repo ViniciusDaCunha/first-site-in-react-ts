@@ -3,16 +3,17 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('achievements_boxes', (table)=> {
-
-    table.increments()
-    table.string('image');
+  return knex.schema.createTable('grades_pixels', (table)=>{
+    table.increments();
     table.string('title');
     table.string('description');
+    table.string('image');
     table.boolean('active').defaultTo(true);
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());
+
   })
+
 };
 
 /**
@@ -20,5 +21,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('achievements_boxes');
+  return knex.schema.dropTable('grades_pixels');
 };

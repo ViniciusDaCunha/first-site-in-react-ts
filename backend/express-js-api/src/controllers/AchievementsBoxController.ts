@@ -1,6 +1,6 @@
 import { Request } from "express";
 import { Response } from "express";
-import AchievementsBoxItem, { mockAchievemetsBoxItems } from "../models/AchievementsBoxModel";
+import AchievementsBoxItem from "../models/AchievementsBoxModel";
 import connectDatabase from "../lib/database";
 
 async function achievementsBoxController(req: Request, res: Response) {

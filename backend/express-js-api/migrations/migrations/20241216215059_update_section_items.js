@@ -3,12 +3,10 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('achievements_boxes', (table)=> {
-
-    table.increments()
+  return knex.schema.createTable('update_section_items', (table)=>{
+    table.increments();
     table.string('image');
     table.string('title');
-    table.string('description');
     table.boolean('active').defaultTo(true);
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());
@@ -20,5 +18,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('achievements_boxes');
+  return knex.schema.dropTable('update_section_items');
 };
